@@ -1,7 +1,6 @@
 body {
-	margin-top: 60px;
 	font-size: 14px;
-	font-family: "Helvetica Nueue",Arial,Verdana,sans-serif;
+	font-family: "微軟正黑體", "Microsoft JhengHei", "Helvetica Nueue",Arial,Verdana,sans-serif;
 	background-color: #E5E9ED;
 }
 .btn:hover,
