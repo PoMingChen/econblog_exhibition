@@ -6,7 +6,7 @@
     <link href='css/rotating-card.css' rel='stylesheet' />
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta http-equiv="refresh" content="300" >
+<!--    <meta http-equiv="refresh" content="300" > -->
     <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
@@ -22,7 +22,7 @@
     </div>
   </div>
 
-<section class="carousel slide" data-ride="carousel" id="postsCarousel">
+<section class="carousel slide" data-ride="carousel" id="postCarousel" data-pause=false data-interval="6000">
     <div class="container p-t-0 m-t-2 carousel-inner">
         <div class="row row-equal carousel-item active m-t-0">
 
@@ -430,7 +430,7 @@
           </div>
         </div>
 
-        <div class="row row-equal carousel-item m-t-0">
+        <div class="row row-equal carousel-item m-t-0" id="lastSlide">
           <div class="col-md-4">
             <div class="card-container manual-flip">
               <div class="card">
@@ -466,7 +466,7 @@
                           </div>
                       </div>
                       <div class="footer2">
-                          <button class="btn btn-simple" rel="tooltip" title="" onclick="rotateCard(this)" data-original-title="Flip Card"><i class="fa fa-reply"></i> 回正面
+                          <button class="btn btn-simple" rel="tooltip" title="" onclick='rotateCard(this)' data-original-title="Flip Card"><i class="fa fa-reply"></i> 回正面
                           </button>
                       </div>
                   </div> <!-- end back panel -->
@@ -544,6 +544,17 @@
         }
     }
 </script>
+
+<!-- flipback experiment-->
+<script type="text/javascript">
+$('#postCarousel').on('slid.bs.carousel', function (ev) {
+  var id = ev.relatedTarget.id;
+  if(id=="lastSlide"){
+    $(".card-container.hover.manual-flip").removeClass('hover');
+  }
+})
+</script>
+
 <script  src="js/index.js"></script>
 
 <!--
